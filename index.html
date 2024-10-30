@@ -10,39 +10,52 @@
 <body>
     <div class="number-container">
         <div class="row">
-            <input type="text" class="input-box" value="Beskrivelse af spillet. ">
+
             </div>
 &nbsp;
+<div class="row">
+    <input type="text" id="input10-less-answer" class="input-number-answer-hor" readonly>
+</div>
+<div class="row">
+    <input type="text" id="input10-less" class="input-number" autocomplete="off">
+</div>
+<div class="row">
+    <input type="text" class="info-text-hor" placeholder="- 10" readonly>
+</div>
 
-        <!-- row1 -->
-        <div class="row">
-            <input type="text" id="input1-more" class="input-number">
-        </div>
-            <!-- row2 -->
-        <div class="row">
-            <input type="text" class="info-text" placeholder="En mere" readonly>
-        </div>
-            <!-- row3 -->
+
+
+
+ 
     <div class="row">
-    <input type="text" id="input10-less" class="input-number">
-    <input type="text" class="info-text" placeholder="Ti mindre" readonly>
+    <input type="text" id="input1-less-answer" class="input-number-answer-ver" readonly>
+    <input type="text" id="input1-less" class="input-number" autocomplete="off">
+    <input type="text" class="info-text-ver" placeholder="- 1" readonly>
     <input type="text" class="random-number" readonly>
-    <input type="text" class="info-text" placeholder="Ti mere" readonly>
-    <input type="text" id="input10-more" class="input-number">
+    <input type="text" class="info-text-ver" placeholder="+ 1" readonly>
+    <input type="text" id="input1-more" class="input-number" autocomplete="off">
+    <input type="text" id="input1-more-answer" class="input-number-answer-ver" readonly>
 </div>
-    <!-- row4 -->
+       <div class="row">
+           <input type="text" class="info-text-hor" placeholder="+ 10" readonly>
+       </div>
 <div class="row">
-    <input type="text" class="info-text" placeholder="En mindre" readonly>
+    <input type="text" id="input10-more" class="input-number" autocomplete="off">
 </div>
-    <!-- row5 -->
 <div class="row">
-    <input type="text" id="input1-less" class="input-number">
+    <input type="text" id="input10-more-answer" class="input-number-answer-hor" readonly>
 </div>
-    <!-- row6 -->
+
+
 <div class="row">
-    <button class="btn-blue" onClick="getRandomInt()">Hent et tal</button>
-    <button class="btn-white">Rigtigt!</button>
-    <button class="btn-blue" onClick="checkAnswer()">Se svar</button>
+    <button class="btn-start" onClick="getRandomInt()">Start</button>
+    <button class="btn-white"></button>
+    <button class="btn-answer" onClick="checkAnswer()">Se svar</button>
+</div>
+<div class="row">
+    <button class="btn-blue" onClick="showAlert()">Hvad skal jeg gøre?</button>
+    <button class="timer"></button>
+    <button class="btn-blue" onClick="checkAnswer()">Se 10-tals tabel</button>
 </div>
 </div>
 </body>

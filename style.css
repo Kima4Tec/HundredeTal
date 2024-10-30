@@ -12,7 +12,6 @@ body {
 
 .content {
     padding: 40px;
-    border: var(--border-all);
 }
 
 .number-container {
@@ -20,9 +19,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid hsl(0, 6%, 14%);
     width: 600px;
-    height: 600px;
+    height: auto;
     background-image: url('hundrede.jpg');
     background-size: cover;
     background-position: center;
@@ -34,46 +32,110 @@ body {
     flex-wrap: wrap;
 }
 
+.input-box{
+    margin-top: 40px;
+    font-weight: normal;
+    font-size: 14pt;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+}
+
 .random-number {
     font-weight: bold;
     font-size: 34pt;
     padding: 10px;
-    width: 53px;
-    height: 53px;
+    width: 55px;
+    height: 55px;
+    background-color: rgb(219, 250, 219);
+    border: 1px solid black;
 }
 
 .input-number {
     font-weight: bold;
     font-size: 34pt;
     padding: 10px;
-    width: 53px;
-    height: 53px;
+    width: 55px;
+    height: 55px;
+    border: var(--border-all);
+}
+.input-number-answer-hor {
+    font-weight: bold;
+    font-size: 34pt;
+    padding: 10px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    width: 55px;
+    height: 55px;
+    background-color: lightgreen;
+    border: 1px solid black;
 }
 
-.info-text {
+.input-number-answer-ver {
+    font-weight: bold;
+    font-size: 34pt;
+    padding: 10px;
+    margin-left: -1px;
+    margin-right: -1px;
+    width: 55px;
+    height: 55px;
+    background-color: lightgreen;
+    border: 1px solid black;
+}
+
+.info-text-ver {
+    text-align: center;
     font-weight: bold;
     font-size: 8pt;
     padding: 10px;
-    width: 53px;
-    height: 53px;
+    width: 55px;
+    height: 55px;
+    margin-right: -1px;
+    margin-left: -1px;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+.info-text-hor {
+    text-align: center;
+    font-weight: bold;
+    font-size: 8pt;
+    padding: 10px;
+    width: 55px;
+    height: 55px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    background-color: aliceblue;
+    border: 1px solid black;
 }
 
-button.btn-blue {
-    background-color: rgb(89, 89, 236);
+button{    
     width: 150px;
     height: 50px;
     border-radius: 10px;
     margin: 20px;
-    padding: 0;
+    padding: 0;}
+
+button.btn-blue {
+    background-color: rgb(89, 89, 236);
     color: aliceblue;
 }
 
 button.btn-white {
     background-color: white;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 0;
+    color: black;
+}
+
+button.btn-start {
+    background-color:rgb(219, 250, 219);
+    color: black;
+    border: 4px solid black;
+}
+button.btn-answer {
+    background-color: rgb(0, 255, 13);
+    color: black;
+}
+
+button.timer {
+    background-color: white;
     color: black;
 }
