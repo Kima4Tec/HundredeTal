@@ -8,55 +8,62 @@
     <script src='script.js' defer></script>
 </head>
 <body>
+    <div class="content">
+        <div class="getNames">
+         <p>Skriv dit navn og vælg derefter en sværhedsgrad.</p>
+            Navn: <input type="text" class="input-name" id="userName" required placeholder="Skriv dit navn her"><br>
+            <button class="btn-spil" onclick="spil()">Let</button>
+            <button class="btn-spil" onclick="spil()">Mellem</button>
+            <button class="btn-spil" onclick="spil()">Svær</button>
+        </div>
     <div class="number-container">
         <div class="row">
 
             </div>
 &nbsp;
+
 <div class="row">
-    <input type="text" id="input10-less-answer" class="input-number-answer-hor" readonly>
+    <input type="text" id="input10-less-answer" class="input-number-answer-hor" readonly tabindex="-1">
 </div>
 <div class="row">
-    <input type="text" id="input10-less" class="input-number" autocomplete="off">
+    <input type="text" id="input10-less" class="input-number" autocomplete="off" tabindex="1">
 </div>
 <div class="row">
-    <input type="text" class="info-text-hor" placeholder="- 10" readonly>
+    <input type="text" class="info-text-hor" placeholder="- 10" readonly tabindex="-1">
 </div>
-
-
-
-
  
     <div class="row">
-    <input type="text" id="input1-less-answer" class="input-number-answer-ver" readonly>
-    <input type="text" id="input1-less" class="input-number" autocomplete="off">
-    <input type="text" class="info-text-ver" placeholder="- 1" readonly>
-    <input type="text" class="random-number" readonly>
-    <input type="text" class="info-text-ver" placeholder="+ 1" readonly>
-    <input type="text" id="input1-more" class="input-number" autocomplete="off">
-    <input type="text" id="input1-more-answer" class="input-number-answer-ver" readonly>
+    <input type="text" id="input1-less-answer" class="input-number-answer-ver" readonly tabindex="-1">
+    <input type="text" id="input1-less" class="input-number" autocomplete="off" tabindex="2">
+    <input type="text" class="info-text-ver" placeholder="- 1" readonly tabindex="-1">
+    <input type="text" class="random-number" readonly tabindex="-1">
+    <input type="text" class="info-text-ver" placeholder="+ 1" readonly tabindex="-1">
+    <input type="text" id="input1-more" class="input-number" autocomplete="off" tabindex="3">
+    <input type="text" id="input1-more-answer" class="input-number-answer-ver" readonly tabindex="-1">
 </div>
        <div class="row">
-           <input type="text" class="info-text-hor" placeholder="+ 10" readonly>
+           <input type="text" class="info-text-hor" placeholder="+ 10" readonly tabindex="-1">
        </div>
 <div class="row">
-    <input type="text" id="input10-more" class="input-number" autocomplete="off">
+    <input type="text" id="input10-more" class="input-number" autocomplete="off" tabindex="4">
 </div>
 <div class="row">
-    <input type="text" id="input10-more-answer" class="input-number-answer-hor" readonly>
+    <input type="text" id="input10-more-answer" class="input-number-answer-hor" readonly tabindex="-1">
 </div>
 
 
 <div class="row">
-    <button class="btn-start" onClick="getRandomInt()">Start</button>
-    <button class="btn-white"></button>
-    <button class="btn-answer" onClick="checkAnswer()">Se svar</button>
+    <button class="btn-start" onClick="getRandomInt()" tabindex="-1">Start</button>
+    <button class="btn-result" tabindex="-1"></button>
+    <button class="btn-answer" onClick="checkAnswer()" tabindex="5">Se svar</button>
 </div>
 <div class="row">
-    <button class="btn-blue" onClick="showAlert()">Hvad skal jeg gøre?</button>
-    <button class="timer"></button>
-    <button class="btn-blue" onClick="checkAnswer()">Se 10-tals tabel</button>
+    <button class="btn-blue" onClick="showAlert()" tabindex="-1">Hvad skal jeg gøre?</button>
+    <button class="timer" tabindex="-1"></button>
+    <button class="btn-blue" onClick="newPlayer()" tabindex="-1">Ny spiller</button>
 </div>
+</div>
+<div class="result-info"></div>
 </div>
 </body>
 </html>
