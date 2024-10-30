@@ -28,12 +28,12 @@ function showNameAlert() {
     alert("Du skal skrive et navn");
 }
 function showAlert() {
-    alert("Tryk på start og så er du igang! Du får et tal. Nu skal du udregne, hvad tallet er, hvis du trækker 1 eller 10 fra. Eller hvis du lægger 1 eller 10 til. Du har 30 sekunder til at indtaste de 4 tal. Du får 1 point for hver gang, du har 4 rigtige og nye 30 sekunder.");
+    alert("Tryk på start og så er du igang! Du får et tal. Nu skal du udregne, hvad tallet er, hvis du trækker 1 eller 10 fra, eller hvis du lægger 1 eller 10 til. Du har 30 sekunder til at indtaste de 4 tal. Du får 1 point for hver gang, du har 4 rigtige og nye 30 sekunder. Får du en fejl stopper spillet.");
 }
 
 
 function getRandomInt(){
-
+    document.querySelector('.btn-start').style.display = "none";
     const number = Math.floor(Math.random() * (max - min + 1)) + min;
     showNumber(number);
 }
@@ -83,10 +83,6 @@ function startTimer(duration) {
     }, 1000);
 }
 
-function resetTimer(duration) {
-    startTimer(duration);
-}
-
 function checkAnswer(){
     no = parseInt(document.querySelector('.random-number').value, 10)
     const input1More = no + 1;
@@ -133,6 +129,8 @@ if(userInput1More === input1More && userInput10More === input10More && userInput
     document.querySelector('.btn-result').innerHTML = `Antal fire rigtige: ${result}`
     getRandomInt()
     document.querySelector('.timer').innerHTML='';
-}
+} else {
+    startTimer(0)
+    document.querySelector('.result-info').innerHTML = `Flot ${name}! Du fik ${result} point`}
 
 }
