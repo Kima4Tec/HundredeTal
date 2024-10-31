@@ -5,13 +5,16 @@ let interval;
 let name = "";
 
 function newPlayer(){
+    startTimer(0);
+    document.querySelector('.result-info').style.display = "none";
+    document.querySelector('.btn-start').style.display = "inline";
+    document.querySelector('title').innerHTML= "Hundrede tal";
     document.querySelector('#userName').value = "";
     document.querySelector('.number-container').style.display = "none";
     document.querySelector('.getNames').style.display = "inline";
 }
 
-
-function spil() {
+function play() {
     name = document.querySelector('#userName').value;
     console.log(name);
     if(name==="")
@@ -28,12 +31,12 @@ function showNameAlert() {
     alert("Du skal skrive et navn");
 }
 function showAlert() {
-    alert("Tryk på start og så er du igang! Du får et tal. Nu skal du udregne, hvad tallet er, hvis du trækker 1 eller 10 fra. Eller hvis du lægger 1 eller 10 til. Du har 30 sekunder til at indtaste de 4 tal. Du får 1 point for hver gang, du har 4 rigtige og nye 30 sekunder.");
+    alert("Tryk på start og så er du igang! Du får et tal. Nu skal du udregne, hvad tallet er, hvis du trækker 1 eller 10 fra, eller hvis du lægger 1 eller 10 til. Du har 30 sekunder til at indtaste de 4 tal. Du får 1 point for hver gang, du har 4 rigtige og nye 30 sekunder. Får du en fejl stopper spillet.");
 }
 
 
 function getRandomInt(){
-
+    document.querySelector('.btn-start').style.display = "none";
     const number = Math.floor(Math.random() * (max - min + 1)) + min;
     showNumber(number);
 }
@@ -75,16 +78,15 @@ function startTimer(duration) {
         if (--timer < 0) {
             clearInterval(interval);
             timerDisplay.textContent = "Tiden er gået!";
-            document.querySelector('.result-info').style.display = "flex";
-            if(result > 0)
-            document.querySelector('.result-info').innerHTML = `Flot ${name}! Du fik ${result} point`
+            
+            if(result > 0 && document.querySelector('.number-container').style.display === "flex")
+            {
+                document.querySelector('.result-info').style.display = "flex";
+                document.querySelector('.result-info').innerHTML = `Flot ${name}! Du fik ${result} point`
+            }
             
         }
     }, 1000);
-}
-
-function resetTimer(duration) {
-    startTimer(duration);
 }
 
 function checkAnswer(){
@@ -133,6 +135,8 @@ if(userInput1More === input1More && userInput10More === input10More && userInput
     document.querySelector('.btn-result').innerHTML = `Antal fire rigtige: ${result}`
     getRandomInt()
     document.querySelector('.timer').innerHTML='';
-}
+} else {
+    startTimer(0)
+    document.querySelector('.result-info').innerHTML = `Flot ${name}! Du fik ${result} point`}
 
 }
